@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { useMediaQuery,ThemeProvider,createTheme,responsiveFontSizes } from '@mui/material';
+import HomePage from './pages/HomePage/HomePage';
+import AdvantagesPage from './pages/AdvantagesPage/AdvantagesPage';
+import HistoryPage from './pages/HistoryPage/HistoryPage';
+import Header from './components/Header/Header';
+import MobileHomePage from './pages/mobile/MobileHomePage/MobileHomePage';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+	const [isNonMobile, setIsNonMobile] = useState(useMediaQuery('(min-width: 1200px)'));
+	let theme = createTheme();
+	theme = responsiveFontSizes(theme)
+	return (
+		<div className="App">
+			{isNonMobile ? (
+				<ThemeProvider theme={theme}>
+				<div>
+					<Header  />
+					<HomePage />
+					<AdvantagesPage />
+					<HistoryPage />
+				</div>
+					
+				</ThemeProvider>
+			) : (
+				<div>
+          <MobileHomePage />
+        </div>
+			)}
+		</div>
+	);
 }
 
 export default App;

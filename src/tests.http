@@ -1,0 +1,6 @@
+POST https://api.telegram.org/bot5956809002:AAG1uWvC32mrOJipG5c5xqxiDMQHxJJo_Us/getUpdates HTTP/1.1
+Content-Type: application/json
+
+{
+  
+}

@@ -1,0 +1,59 @@
+.HomePage {
+	background-image: url('../../public/homePage.jpg');
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	overflow: hidden;
+	grid-template-areas: 'registration scrolldown title';
+	grid-template-columns: 1fr 0.75fr 1fr;
+}
+
+.Title-text {
+	color: #191716;
+}
+
+.Title-container img {
+	max-width: 25rem;
+}
+
+.Title-subtitle {
+	color: #6e6a6f;
+}
+
+.MuiFormControl-root {
+	width: 80%;
+	align-self: center;
+}
+
+.ScrolldownButton {
+	animation-name: updown;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	transition: all 0.3s ease;
+}
+
+.ScrolldownButton div {
+	padding: 0 1rem;
+	background: rgba(25, 23, 22, 0.66);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(7.1px);
+	-webkit-backdrop-filter: blur(7.1px);
+	border: 2px solid rgba(255, 255, 255, 0.795);
+}
+
+@keyframes updown {
+	0% {
+		transform: translateY(0px);
+	}
+
+	50% {
+		transform: translateY(4%);
+	}
+
+	100% {
+		transform: translateY(0px);
+	}
+}

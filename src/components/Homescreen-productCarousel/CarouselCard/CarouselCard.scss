@@ -1,0 +1,28 @@
+.DetailedButtonContainer {
+	position: relative;
+	width: 100%;
+}
+
+.ImageBlur {
+	position: absolute;
+	background: rgba(16, 16, 16, 0.16);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(4.9px);
+	-webkit-backdrop-filter: blur(4.9px);
+	opacity: 0;
+	cursor: pointer;
+	&:hover {
+		opacity: 1;
+		transition: 0.1s ease-in;
+	}
+}
+
+.ImageButton {
+	color: white;
+	opacity: 1;
+	border: 1px white solid;
+	border-radius: 25px;
+	padding: 0.25em 1em;
+	background-color: rgba(0, 0, 0, 0.247);
+}
